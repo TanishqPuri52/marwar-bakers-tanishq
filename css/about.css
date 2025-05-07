@@ -1,0 +1,240 @@
+/* About Hero Section */
+.about-hero {
+    position: relative;
+    margin-top: -80px; /* To counteract the padding-top on main */
+    height: 60vh;
+    overflow: hidden;
+}
+
+.about-hero .hero-image {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.about-hero .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.about-hero .hero-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.about-hero .hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: var(--white);
+    width: 90%;
+    max-width: 800px;
+    z-index: 2;
+    /* animation: fadeIn 1s ease; */
+}
+
+.about-hero .hero-content h1 {
+    color: var(--white);
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.about-hero .hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Our Story Section */
+.our-story {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.story-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    animation: fadeIn 0.8s ease;
+}
+
+.story-content h2 {
+    color: var(--secondary);
+}
+
+.story-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+/* Promises Section */
+.promises {
+    padding: 5rem 0;
+    background-color: var(--background-cream);
+}
+
+.promise-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.promise-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    animation: fadeIn 0.8s ease;
+}
+
+.promise-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.promise-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    transition: var(--transition);
+}
+
+.promise-card:hover .promise-icon {
+    transform: scale(1.1);
+}
+
+.promise-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.promise-card h3 {
+    color: var(--secondary);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.promise-card p {
+    color: var(--gray-dark);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* Team Section */
+.team {
+    padding: 5rem 0;
+    background-color: var(--white);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.team-member {
+    background-color: var(--gray-light);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: var(--transition);
+    animation: fadeIn 0.8s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1);
+}
+
+.member-image {
+    height: 280px;
+    overflow: hidden;
+}
+
+.member-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.team-member:hover .member-image img {
+    transform: scale(1.05);
+}
+
+.team-member h3 {
+    padding: 1.5rem 1.5rem 0.5rem;
+    font-weight: 700;
+}
+
+.team-member .position {
+    color: var(--primary-dark);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    padding: 0 1.5rem;
+}
+
+.team-member .bio {
+    padding: 0 1.5rem 1.5rem;
+    color: var(--gray-dark);
+    font-size: 0.95rem;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
+    .about-hero .hero-content h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-hero {
+        height: 50vh;
+    }
+
+    .about-hero .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-hero .hero-content p {
+        font-size: 1.1rem;
+    }
+
+    .story-content {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .about-hero {
+        height: 40vh;
+    }
+
+    .about-hero .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .about-hero .hero-content p {
+        font-size: 1rem;
+    }
+
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}
